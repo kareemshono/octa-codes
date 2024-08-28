@@ -226,3 +226,16 @@ a {
 	.st102{fill:#00B8B8;}
 	.st103{fill:#41474C;}
 	.st104{clip-path:url(#SVGID_00000101094105488258088470000013734691900969402508_);}
+
+	.techsSectionContainer{
+		position: relative;
+	}
+	.particlesContainer{
+        position: absolute;
+        width: 100%;
+        max-height: 100vh;
+        top: 0;
+        left: 0;
+		bottom: 0;
+        z-index: -1; /* Ensure particles are behind other content */
+      }

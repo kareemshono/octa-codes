@@ -1,0 +1,51 @@
+.aboutSectionContainer{
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url("/aboutbg.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 9;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .aboutCol {
+        width: 40%;
+        height: 80%;
+        box-sizing: border-box;
+        margin-right: 5rem;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        // clip-path: polygon(0 0, 67% 0, 44% 100%, 0% 100%);
+        background: rgba(20, 0, 66, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(5px);
+        
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 10px;
+        .title{
+            color: #f1f1f1;
+        }
+        .subtitle{
+            color: #f1f1f1;
+        }
+        .text {
+            color: #f1f1f1d8;
+        }
+        .btn{
+           
+                background: #4361EE;
+                padding: .7rem 1.5rem;
+                color: #f1f1f1;
+                font-size: 1.2rem;
+                border: none;
+                margin-top: 40px;
+                border-radius: 15px 0px 15px 0px;
+                cursor: pointer;
+            
+        }
+    }
+}
