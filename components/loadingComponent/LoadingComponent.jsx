@@ -11,7 +11,7 @@ const LoadingComponent = () => {
     gsap.to(logoRef.current, {
       opacity: 0,
       duration: 1,
-      repeat: 5,  // Flashing 4 times (including the initial state)
+      repeat: 5,  
       yoyo: true,
       ease: 'power1.inOut',
       onComplete: () => {
