@@ -15,7 +15,7 @@ const LoadingComponent = () => {
       yoyo: true,
       ease: 'power1.inOut',
       onComplete: () => {
-        // Optional: Hide the loader after the animation completes
+        
         gsap.to(logoRef.current, { opacity: 0, duration: 0.5 });
       }
     });
