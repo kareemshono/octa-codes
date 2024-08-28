@@ -9,7 +9,7 @@ const ServiceCard = ({imgUrl,serviceTitle,serviceDescription}) => {
         <span></span>
         <span></span>
         <div className={styles.cardImage}>
-            <Image src={imgUrl} width={300} height={150} />
+            <Image src={imgUrl} width={300} height={150} alt={serviceTitle} />
         </div>
         <div className={styles.cardContent}>
             <h2 className={styles.cardTitle}>{serviceTitle}</h2>

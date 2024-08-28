@@ -6,7 +6,7 @@ const PortfolioItem = ({id,title,imgUrl, type, description}) => {
 
     <div className={styles.itemContainer}>
         <div className={styles.imgContainer}>
-            <Image src={imgUrl} width={300} height={150} />
+            <Image src={imgUrl} width={300} height={150} alt={title} />
         </div>
         {/* transition container */}
 
