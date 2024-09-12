@@ -1,0 +1,11 @@
+.footerSection{
+    width: 100%;
+    height: 100vh;
+    background-image: url("/footer.png");
+    background-repeat: no-repeat;
+    z-index: 9;
+
+    .logoContainer {
+        background: #000;
+    }
+}

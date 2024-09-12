@@ -6,6 +6,8 @@ import ServicesSection from "@/components/servicesSection/ServicesSection";
 import TechsSection from "@/components/techsSection/TechsSection";
 import AboutSection from "@/components/aboutSection/AboutSection";
 import PortfolioSection from "@/components/portfolioSection/PortfolioSection";
+import ClientReview from "@/components/clientReview/ClientReview";
+import Contact from "@/components/contact/Contact";
 
 
 
@@ -26,6 +28,9 @@ export default function Home() {
        <TechsSection />
        <AboutSection />
        <PortfolioSection />
+       <ClientReview />
+       <Contact />
+       
       </main>
     </>
   );

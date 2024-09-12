@@ -15,7 +15,7 @@ const TechsSection = () => {
                 Technologies
             </h1>
             <h1>
-               That We
+                We
             </h1>
             <h1>
                 Use

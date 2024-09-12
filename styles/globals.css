@@ -233,9 +233,25 @@ a {
 	.particlesContainer{
         position: absolute;
         width: 100%;
-        max-height: 100vh;
+    	height: 100vh;
         top: 0;
         left: 0;
 		bottom: 0;
         z-index: -1; /* Ensure particles are behind other content */
       }
+	  .swiper {
+		width: 80%;
+		
+		padding-top: 50px;
+		padding-bottom: 50px;
+	  }
+	  
+	  .swiper-slide {
+		background-position: center;
+		background-size: cover;
+		width: 300px;
+		height: 300px;
+		
+	  }
+	  
+	  
