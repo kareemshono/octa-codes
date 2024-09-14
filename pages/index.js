@@ -8,6 +8,7 @@ import AboutSection from "@/components/aboutSection/AboutSection";
 import PortfolioSection from "@/components/portfolioSection/PortfolioSection";
 import ClientReview from "@/components/clientReview/ClientReview";
 import Contact from "@/components/contact/Contact";
+import Footer from "@/components/footer/Footer";
 
 
 
@@ -30,7 +31,7 @@ export default function Home() {
        <PortfolioSection />
        <ClientReview />
        <Contact />
-       
+       <Footer />
       </main>
     </>
   );

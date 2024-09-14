@@ -1,10 +1,11 @@
 .contactSection {
     width: 80%;
-    height: 100vh;
+    height: 100%;
     background: #12064284;
-    margin: 0 auto;
+    margin: 5rem auto;
     display: flex;
     padding: 1rem;
+    
     .colLeft {
         width: 50%;
         height: 100%;
@@ -74,7 +75,7 @@
             padding: 2rem;
             background: #120642ae;
             box-sizing: border-box;
-            box-shadow: 0px 0px 20px #4e4e4e49;
+            box-shadow: 0px 0px 20px #1e1e1e49;
             .formGroup{
                 display: flex;
                 flex-direction: column;
@@ -112,6 +113,11 @@
                     margin-top: 40px;
                     border-radius: 15px 0px 15px 0px;
                     cursor: pointer;
+                    transition: .2s all ease-in;
+                    
+                &:hover {
+                    background: #7209B7
+                }
                 }
              
             

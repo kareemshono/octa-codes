@@ -1,4 +1,14 @@
-.techsSectionContainer{
+
+
+@mixin mobile {
+    @media screen and (max-width:576px) {
+        @content
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }}.techsSectionContainer{
     height: 100vh;
     width: 100%;
     position: relative;
@@ -15,6 +25,7 @@
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         border-radius: 10px;
+     
         .clipText{
             width: 20%;
             box-sizing: border-box;
@@ -50,7 +61,18 @@
                 line-height: 25px;
             }
         }
-        
+        @include mobile {
+            clip-path: none;
+            .clipContent {
+                width: 100%;
+                img {
+                    width: 10%;
+                }
+                .para {
+                    padding: 2rem;
+                }
+            }
+        }
         
     }
 }

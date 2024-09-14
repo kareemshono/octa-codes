@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
+
 const ParticlesBackground = () => {
     const [init, setInit] = useState(false);
 
@@ -18,7 +19,9 @@ const ParticlesBackground = () => {
     };
 
     return (
+        <>
         <div className="particlesContainer">
+            
             {init && (
                 <Particles
                     id="tsparticles"
@@ -105,6 +108,7 @@ const ParticlesBackground = () => {
                 />
             )}
         </div>
+        </>
     );
 };
 

@@ -24,7 +24,7 @@ const LoadingComponent = () => {
   return (
     <div className={styles.loadingContainer}>
       <div className={styles.logo} ref={logoRef}>
-        <Image  src="/logo2.svg" width={200} height={200} alt="Loading Logo" />
+        <Image priority src="/logo2.svg" width={200} height={200} alt="Loading Logo" />
       </div>
     </div>
   );

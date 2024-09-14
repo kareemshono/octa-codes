@@ -1,12 +1,34 @@
 export const servicesData = [
     {id:0,
      imgUrl:"/webdev.svg",
-     title:"web design & devlopment",
-     description:"Our Web Design & Development service crafts visually stunning and highly functional websites tailored to your brand. From responsive design to seamless user experiences, we create websites that not only look great but also drive results and engage your audience."   
+     title:"custom software development",
+     description:"A dedicated team of Octa developers will delve deep into your business logic and your goals. This is how we at Octa develop software solutions that advance your company and are successful in the long term.",
+        subDescription:"We put together a dedicated team of developers. They only work on your project. You benefit from our expertise and a quick project start."
+        ,subServices:[{id:0,
+                    title:"web design & development",
+                    description:"Our Web Design & Development service crafts visually stunning and highly functional websites tailored to your brand. From responsive design to seamless user experiences, we create websites that not only look great but also drive results and engage your audience.",
+                    imgUrl:"/webdev.svg"
+                         },
+                {id:1,
+                    title:"mobile app development",
+                    description:"Our Mobile App Development service delivers intuitive, high-performing apps designed to meet your unique needs. We build seamless, user-friendly experiences across all platforms, ensuring your app design stands out, smooth functionality, and optimal performance",
+                    imgUrl:"/mobiledev.svg"
+                },
+                {id:2,
+                    title:"Interfaces to ERP, CRM & e-commerce systems",
+                    description:"",
+                    imgUrl:""
+                },
+                {id:3,
+                    title:"Custom Software Solutions",
+                    description:"",
+                    imgUrl:""
+                }
+]
     },
     {id:1,
      imgUrl:"/mobiledev.svg",
-     title:"mobile app development",
+     title:"Consulting",
      description:"Our Mobile App Development service delivers intuitive, high-performing apps designed to meet your unique needs. We build seamless, user-friendly experiences across all platforms, ensuring your app design stands out, smooth functionality, and optimal performance"   
     },
     {id:2,

@@ -1,68 +1,3 @@
-import { Inter } from "next/font/google"
-import { gsap } from 'gsap';
-import styles from "./Hero.module.scss"
-import { useEffect, useRef } from "react";
-const inter = Inter({ subsets: ["latin"] });
-
-
-
-
-const Hero = () => {
-  const svgRef = useRef(null);
-  const textRef = useRef(null);
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      const tl = gsap.timeline();
-      tl.fromTo(
-        textRef.current.querySelectorAll('h1 , p, button'), 
-        {
-          y: 50, 
-          opacity: 0, 
-        },
-        {
-          y: 0, 
-          opacity: 1, 
-          duration: 2, 
-          ease: "power3.out", 
-          stagger: 0, 
-          delay: 0,
-        }
-      );
-      for (let i = 1; i <= 45; i++) {
-        const lineElement = svgRef.current.querySelector(`#line${i}`);
-        if (lineElement) {
-          gsap.to(lineElement, {
-            duration: 2,
-            fill: "#DD0EE2", // Change the fill color to the desired color
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut",
-         
-          });
-        }
-      }
-        
-  
-    }, 1000); // Adjust timeout as needed
-  
-    return () => clearTimeout(timeoutId); // Cleanup timeout on unmount
-  }, []);
-  return (
-    <div className={styles.heroContainer}>
-        <div className={styles.heroText} ref={textRef}>
-            <h1 className={`${styles.heroTitle} ${inter.className}`}>
-                Providing The Best <br />
-                Services & IT <span>Solutions</span>
-            </h1>
-            <p className={styles.heroSubtitle}>
-            Empowering businesses with innovative, tailored IT solutions that drive growth, streamline operations, and transform ideas into digital reality.
-            </p>
-            <button className={`${inter.className}`}>Start Now</button>
-        </div>
-        <div className={`${styles.heroLogo}`}  >
-
-		
-		
 <svg ref={svgRef} version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 	 viewBox="0 0 3221.8 2013.6"  style={{ enableBackground: 'new 0 0 3221.8 2013.6' }} space="preserve">
 <style type="text/css">
@@ -903,11 +838,21 @@ const Hero = () => {
 				l-10.4-7.2c-0.4-0.3-0.6-0.9-0.2-1.3c0.3-0.4,0.9-0.5,1.3-0.2l10.4,7.2c3.4,2.4,5.5,6.2,5.5,10.4v5.5c0,3.8,2.1,7.4,5.4,9.3
 				l20.2,11.6c0.5,0.3,0.6,0.9,0.4,1.3C2000.5,526.6,2000.2,526.7,1999.8,526.7z"/>
 		</g>
-		
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="1700.7" y="74.6" width="198.4" height="326.9">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
 		
 			<mask maskUnits="userSpaceOnUse" x="1700.7" y="74.6" width="198.4" height="326.9" id="SVGID_00000052795349059634393580000000276215044315564990_">
 			<g className="st13">
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000161595919778260304860000009077611015352231864_" filterUnits="userSpaceOnUse" x="1700.7" y="74.6" width="198.4" height="326.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="1700.7" y="74.6" width="198.4" height="326.9" id="SVGID_00000052795349059634393580000000276215044315564990_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000161595919778260304860000009077611015352231864_)"}}>
@@ -1225,11 +1170,22 @@ const Hero = () => {
 				l-10.4-7.2c-0.4-0.3-0.6-0.9-0.2-1.3c0.3-0.4,0.9-0.5,1.3-0.2l10.4,7.2c3.4,2.4,5.5,6.2,5.5,10.4v5.5c0,3.8,2.1,7.4,5.4,9.3
 				l20.2,11.6c0.5,0.3,0.6,0.9,0.4,1.3C2633,1500.6,2632.7,1500.8,2632.4,1500.8z"/>
 		</g>
-	
+		<defs>
+			
+				<filter id="Adobe_OpacityMaskFilter_00000130614814882162676690000002218445887000600503_" filterUnits="userSpaceOnUse" x="2333.2" y="1048.7" width="198.4" height="326.9">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
 		
 			<mask maskUnits="userSpaceOnUse" x="2333.2" y="1048.7" width="198.4" height="326.9" id="SVGID_00000003790355174552195250000008527776939864483729_">
 			<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000130614814882162676690000002218445887000600503_)"}}>
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000111173447135544108830000013466644812458421934_" filterUnits="userSpaceOnUse" x="2333.2" y="1048.7" width="198.4" height="326.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2333.2" y="1048.7" width="198.4" height="326.9" id="SVGID_00000003790355174552195250000008527776939864483729_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000111173447135544108830000013466644812458421934_)"}}>
@@ -1839,11 +1795,23 @@ const Hero = () => {
 			</g>
 			<g>
 				<polygon className="st51" points="3122.4,103.9 3073.4,76.3 3023.2,104.6 3072.1,132.6 				"/>
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000111191293583845229790000001255807810601239738_" filterUnits="userSpaceOnUse" x="3073.4" y="76.3" width="49" height="55.7">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="3073.4" y="76.3" width="49" height="55.7" id="SVGID_00000070076296494346808700000017771297729636254902_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000111191293583845229790000001255807810601239738_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000096744279096341688450000015432008742004720555_" filterUnits="userSpaceOnUse" x="3073.4" y="76.3" width="49" height="55.7">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="3073.4" y="76.3" width="49" height="55.7" id="SVGID_00000070076296494346808700000017771297729636254902_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000096744279096341688450000015432008742004720555_)"}}>
@@ -1871,11 +1839,22 @@ const Hero = () => {
 				</linearGradient>
 				<polygon style={{fill:"url(#SVGID_00000064338672055103282630000015843176559227666312_)"}} points="3073.4,76.3 3073.4,132 
 					3122.4,103.9 				"/>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000179633334914319864310000002256279568406989483_" filterUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5">
+						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5" id="SVGID_00000150092566083279341450000008155639351678350258_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000179633334914319864310000002256279568406989483_)"}}>
-						
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000095312777787241901350000008826456446502663359_" filterUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5" id="SVGID_00000150092566083279341450000008155639351678350258_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000095312777787241901350000008826456446502663359_)"}}>
@@ -1897,11 +1876,23 @@ const Hero = () => {
 					</g>
 				</mask>
 				<g>
-				
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000049928882289027671890000002944408990487733124_" filterUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5" id="SVGID_00000009591932933309253580000002334656779073088643_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000049928882289027671890000002944408990487733124_)"}}>
-						
+							<defs>
+								
+									<filter id="Adobe_OpacityMaskFilter_00000016042275935018791840000016901965059812449178_" filterUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5">
+									<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+									<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+								</filter>
+							</defs>
 							
 								<mask maskUnits="userSpaceOnUse" x="3023.2" y="-30.9" width="99.2" height="163.5" id="SVGID_00000009591932933309253580000002334656779073088643_">
 								<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000016042275935018791840000016901965059812449178_)"}}>
@@ -2218,11 +2209,23 @@ const Hero = () => {
 			</g>
 			<g>
 				<polygon className="st51" points="2139.6,100.2 2090.6,72.6 2040.4,100.9 2089.3,128.9 				"/>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000126301759085338577950000013536865347719202433_" filterUnits="userSpaceOnUse" x="2090.6" y="72.6" width="49" height="55.7">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2090.6" y="72.6" width="49" height="55.7" id="SVGID_00000181082516172142539000000017068392450383631266_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000126301759085338577950000013536865347719202433_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000091699680160443112910000001315311638246829241_" filterUnits="userSpaceOnUse" x="2090.6" y="72.6" width="49" height="55.7">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2090.6" y="72.6" width="49" height="55.7" id="SVGID_00000181082516172142539000000017068392450383631266_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000091699680160443112910000001315311638246829241_)"}}>
@@ -2250,11 +2253,22 @@ const Hero = () => {
 				</linearGradient>
 				<polygon style={{fill:"url(#SVGID_00000165224364458410612800000018164760216794949790_)"}} points="2090.6,72.6 2090.6,128.3 
 					2139.6,100.2 				"/>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000030457515649650090700000005190362225948978599_" filterUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5">
+						<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5" id="SVGID_00000023960460035188485750000003576322620980571531_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000030457515649650090700000005190362225948978599_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000094592472765832996330000010333196747321799851_" filterUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5" id="SVGID_00000023960460035188485750000003576322620980571531_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000094592472765832996330000010333196747321799851_)"}}>
@@ -2276,11 +2290,23 @@ const Hero = () => {
 					</g>
 				</mask>
 				<g>
-				
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000013193909739174559640000000186075549745691779_" filterUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5" id="SVGID_00000096739373665130396870000015259668405047694760_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000013193909739174559640000000186075549745691779_)"}}>
-					
+							<defs>
+								
+									<filter id="Adobe_OpacityMaskFilter_00000155851981986847765850000006206862813859728572_" filterUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5">
+									<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+									<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+								</filter>
+							</defs>
 							
 								<mask maskUnits="userSpaceOnUse" x="2040.4" y="-34.6" width="99.2" height="163.5" id="SVGID_00000096739373665130396870000015259668405047694760_">
 								<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000155851981986847765850000006206862813859728572_)"}}>
@@ -2470,11 +2496,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C2475.5,534,2475.5,530.2,2471.4,527.9L2471.4,527.9z"/>
 				</g>
-				
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000032640124250523673870000013663329514971886238_" filterUnits="userSpaceOnUse" x="2202.2" y="383.7" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2202.2" y="383.7" width="306.9" height="306.9" id="SVGID_00000155849953512397651750000003424815628080108991_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000032640124250523673870000013663329514971886238_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000117677340549750717250000001519751413647922578_" filterUnits="userSpaceOnUse" x="2202.2" y="383.7" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2202.2" y="383.7" width="306.9" height="306.9" id="SVGID_00000155849953512397651750000003424815628080108991_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000117677340549750717250000001519751413647922578_)"}}>
@@ -2510,14 +2548,29 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C2475.5,497.9,2475.5,494.1,2471.4,491.7L2471.4,491.7z"/>
 				</g>
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000033328340304976571370000014830679852650849727_" filterUnits="userSpaceOnUse" x="2202.2" y="347.6" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2202.2" y="347.6" width="306.9" height="306.9" id="SVGID_00000163751559717680705880000011411541001705619107_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000033328340304976571370000014830679852650849727_)"}}>
-
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000173864329323261517340000007668399619423546502_" filterUnits="userSpaceOnUse" x="2202.2" y="347.6" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
+						
 							<mask maskUnits="userSpaceOnUse" x="2202.2" y="347.6" width="306.9" height="306.9" id="SVGID_00000163751559717680705880000011411541001705619107_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000173864329323261517340000007668399619423546502_)"}}>
 							</g>
-						</mask>			
+						</mask>
+						
 							<radialGradient id="SVGID_00000007416103816188845790000017097627314680564354_" cx="2355.616" cy="501.0135" r="153.4477" gradientUnits="userSpaceOnUse">
 							<stop  offset="0" style={{stopColor:"#FFFFFF"}}/>
 							<stop  offset="0.2038" style={{stopColor:"#D0D0D0"}}/>
@@ -2546,11 +2599,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C2475.5,463.5,2475.5,459.7,2471.4,457.4L2471.4,457.4z"/>
 				</g>
-				
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000011019353647620970380000007590811310269326490_" filterUnits="userSpaceOnUse" x="2202.2" y="313.2" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2202.2" y="313.2" width="306.9" height="306.9" id="SVGID_00000055704635032364869570000016093678928616212414_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000011019353647620970380000007590811310269326490_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000052104476432963267840000002916739532526509979_" filterUnits="userSpaceOnUse" x="2202.2" y="313.2" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2202.2" y="313.2" width="306.9" height="306.9" id="SVGID_00000055704635032364869570000016093678928616212414_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000052104476432963267840000002916739532526509979_)"}}>
@@ -2585,11 +2650,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C2475.5,428.8,2475.5,425,2471.4,422.7L2471.4,422.7z"/>
 				</g>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000093177501500276999230000013252088305394757789_" filterUnits="userSpaceOnUse" x="2202.2" y="278.5" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2202.2" y="278.5" width="306.9" height="306.9" id="SVGID_00000000924460559450135420000008598016644582931360_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000093177501500276999230000013252088305394757789_)"}}>
-						
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000046326466328229785750000009970141114019946392_" filterUnits="userSpaceOnUse" x="2202.2" y="278.5" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2202.2" y="278.5" width="306.9" height="306.9" id="SVGID_00000000924460559450135420000008598016644582931360_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000046326466328229785750000009970141114019946392_)"}}>
@@ -2630,11 +2707,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C2475.5,394,2475.5,390.2,2471.4,387.9L2471.4,387.9z"/>
 				</g>
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000062905538252436481320000014216810349590920578_" filterUnits="userSpaceOnUse" x="2202.2" y="243.7" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2202.2" y="243.7" width="306.9" height="306.9" id="SVGID_00000010999212547761227590000000761630163371948202_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000062905538252436481320000014216810349590920578_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000068635927640606395110000001289866949724816772_" filterUnits="userSpaceOnUse" x="2202.2" y="243.7" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2202.2" y="243.7" width="306.9" height="306.9" id="SVGID_00000010999212547761227590000000761630163371948202_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000068635927640606395110000001289866949724816772_)"}}>
@@ -2669,11 +2758,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C2475.5,361.2,2475.5,357.4,2471.4,355.1L2471.4,355.1z"/>
 				</g>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000028313331878165628000000014081162448345126561_" filterUnits="userSpaceOnUse" x="2201.3" y="203.8" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2201.3" y="203.8" width="306.9" height="306.9" id="SVGID_00000178173883321323875340000004736302768198353846_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000028313331878165628000000014081162448345126561_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000158021914828991841830000018166970833627492742_" filterUnits="userSpaceOnUse" x="2201.3" y="203.8" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2201.3" y="203.8" width="306.9" height="306.9" id="SVGID_00000178173883321323875340000004736302768198353846_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000158021914828991841830000018166970833627492742_)"}}>
@@ -3742,11 +3843,23 @@ const Hero = () => {
 							2411.4,244 2410.6,242.3 						"/>
 					</g>
 				</g>
-				
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000134233228678228364320000014855651847238380726_" filterUnits="userSpaceOnUse" x="2278.7" y="13" width="153.7" height="357.1">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2278.7" y="13" width="153.7" height="357.1" id="SVGID_00000112598248676862391330000013797816868197740949_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000134233228678228364320000014855651847238380726_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000024003663569480018190000014611876297655528117_" filterUnits="userSpaceOnUse" x="2278.7" y="13" width="153.7" height="357.1">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2278.7" y="13" width="153.7" height="357.1" id="SVGID_00000112598248676862391330000013797816868197740949_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000024003663569480018190000014611876297655528117_)"}}>
@@ -3804,11 +3917,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C516.3,420.3,516.3,416.5,512.2,414.1L512.2,414.1z"/>
 				</g>
-	
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000128442950366630165680000007611344507878466443_" filterUnits="userSpaceOnUse" x="242.9" y="270" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="242.9" y="270" width="306.9" height="306.9" id="SVGID_00000075876300472506183370000013068817839756972211_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000128442950366630165680000007611344507878466443_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000150067372200006235090000000741709656659156383_" filterUnits="userSpaceOnUse" x="242.9" y="270" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="242.9" y="270" width="306.9" height="306.9" id="SVGID_00000075876300472506183370000013068817839756972211_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000150067372200006235090000000741709656659156383_)"}}>
@@ -3844,11 +3969,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C516.3,384.1,516.3,380.3,512.2,378L512.2,378z"/>
 				</g>
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000092422534416370741860000007721931997416268943_" filterUnits="userSpaceOnUse" x="242.9" y="233.8" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="242.9" y="233.8" width="306.9" height="306.9" id="SVGID_00000167377530228530369540000011874756736621393299_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000092422534416370741860000007721931997416268943_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000152239088322825642610000006433623795860156081_" filterUnits="userSpaceOnUse" x="242.9" y="233.8" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="242.9" y="233.8" width="306.9" height="306.9" id="SVGID_00000167377530228530369540000011874756736621393299_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000152239088322825642610000006433623795860156081_)"}}>
@@ -3883,11 +4020,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C516.3,349.8,516.3,346,512.2,343.6L512.2,343.6z"/>
 				</g>
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000026129575099872152570000005938103875875437476_" filterUnits="userSpaceOnUse" x="242.9" y="199.5" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="242.9" y="199.5" width="306.9" height="306.9" id="SVGID_00000168803176446347766810000011828201834524497796_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000026129575099872152570000005938103875875437476_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000129926613089727215610000010403883902019198097_" filterUnits="userSpaceOnUse" x="242.9" y="199.5" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="242.9" y="199.5" width="306.9" height="306.9" id="SVGID_00000168803176446347766810000011828201834524497796_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000129926613089727215610000010403883902019198097_)"}}>
@@ -3922,11 +4071,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C516.3,315,516.3,311.2,512.2,308.9L512.2,308.9z"/>
 				</g>
-		
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000058582423544330262350000015898629448553173932_" filterUnits="userSpaceOnUse" x="242.9" y="164.7" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="242.9" y="164.7" width="306.9" height="306.9" id="SVGID_00000145046705575876334000000017436461609397109635_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000058582423544330262350000015898629448553173932_)"}}>
-						
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000080180035959859826330000017589079387442244789_" filterUnits="userSpaceOnUse" x="242.9" y="164.7" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="242.9" y="164.7" width="306.9" height="306.9" id="SVGID_00000145046705575876334000000017436461609397109635_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000080180035959859826330000017589079387442244789_)"}}>
@@ -3960,11 +4121,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C516.3,280.3,516.3,276.5,512.2,274.2L512.2,274.2z"/>
 				</g>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000097500758971050515710000009351484474286841023_" filterUnits="userSpaceOnUse" x="242.9" y="130" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="242.9" y="130" width="306.9" height="306.9" id="SVGID_00000157305537645802646630000006538903047906933152_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000097500758971050515710000009351484474286841023_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000029016393973799521520000002120140563191817621_" filterUnits="userSpaceOnUse" x="242.9" y="130" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="242.9" y="130" width="306.9" height="306.9" id="SVGID_00000157305537645802646630000006538903047906933152_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000029016393973799521520000002120140563191817621_)"}}>
@@ -3999,11 +4172,23 @@ const Hero = () => {
 						c-4.1-2.3-10.6-2.3-14.6,0l-110.1,64c-4,2.3-4,6.1,0,8.5l110.8,64c4.1,2.3,10.6,2.3,14.6,0l110.1-64
 						C516.3,247.5,516.3,243.7,512.2,241.3L512.2,241.3z"/>
 				</g>
-				
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000138557258118582921910000014657193108666500999_" filterUnits="userSpaceOnUse" x="242.1" y="90.1" width="306.9" height="306.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="242.1" y="90.1" width="306.9" height="306.9" id="SVGID_00000162340784060184632930000004806342584500558208_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000138557258118582921910000014657193108666500999_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000085947282819144443190000003184555348931837343_" filterUnits="userSpaceOnUse" x="242.1" y="90.1" width="306.9" height="306.9">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="242.1" y="90.1" width="306.9" height="306.9" id="SVGID_00000162340784060184632930000004806342584500558208_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000085947282819144443190000003184555348931837343_)"}}>
@@ -5071,11 +5256,23 @@ const Hero = () => {
 							452.1,130.3 451.3,128.5 						"/>
 					</g>
 				</g>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000073694295042673422520000011742803580235927206_" filterUnits="userSpaceOnUse" x="319.5" y="-100.7" width="153.7" height="357.1">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="319.5" y="-100.7" width="153.7" height="357.1" id="SVGID_00000048474043637534491820000012307202538496089531_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000073694295042673422520000011742803580235927206_)"}}>
-					
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000170963678999667852440000009772716829703581088_" filterUnits="userSpaceOnUse" x="319.5" y="-100.7" width="153.7" height="357.1">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="319.5" y="-100.7" width="153.7" height="357.1" id="SVGID_00000048474043637534491820000012307202538496089531_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000170963678999667852440000009772716829703581088_)"}}>
@@ -5392,10 +5589,23 @@ const Hero = () => {
 				l-10.4-7.2c-0.4-0.3-0.6-0.9-0.2-1.3c0.3-0.4,0.9-0.5,1.3-0.2l10.4,7.2c3.4,2.4,5.5,6.2,5.5,10.4v5.5c0,3.8,2.1,7.4,5.4,9.3
 				l20.2,11.6c0.5,0.3,0.6,0.9,0.4,1.3C3087.8,1080.8,3087.5,1081,3087.2,1081z"/>
 		</g>
+		<defs>
+			
+				<filter id="Adobe_OpacityMaskFilter_00000023251465982773025430000011983650879820333456_" filterUnits="userSpaceOnUse" x="2788" y="628.9" width="198.4" height="326.9">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
 		
 			<mask maskUnits="userSpaceOnUse" x="2788" y="628.9" width="198.4" height="326.9" id="SVGID_00000005973239904641897040000002242981203917536952_">
 			<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000023251465982773025430000011983650879820333456_)"}}>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000111876593296598445810000008016768297738538888_" filterUnits="userSpaceOnUse" x="2788" y="628.9" width="198.4" height="326.9">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
+				
 					<mask maskUnits="userSpaceOnUse" x="2788" y="628.9" width="198.4" height="326.9" id="SVGID_00000005973239904641897040000002242981203917536952_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000111876593296598445810000008016768297738538888_)"}}>
 					</g>
@@ -6115,11 +6325,23 @@ const Hero = () => {
 		<g>
 			<g>
 				<g>
-					
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000155844343540599401140000002037971133779147711_" filterUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="484">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="484" id="SVGID_00000097499668748052662340000005424108975419712185_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000155844343540599401140000002037971133779147711_)"}}>
-						
+							<defs>
+								
+									<filter id="Adobe_OpacityMaskFilter_00000004538794822559900450000015184227991511023510_" filterUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="484">
+									<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+									<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+								</filter>
+							</defs>
 							
 								<mask maskUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="484" id="SVGID_00000097499668748052662340000005424108975419712185_">
 								<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000004538794822559900450000015184227991511023510_)"}}>
@@ -6147,11 +6369,23 @@ const Hero = () => {
 					<path className="st399" d="M1131.8,689.1l293.8,163.6l-0.4,325.5l-291.5-172.9L1131.8,689.1z M1423.4,855.5l-289.5-161.3l1.8,308.6
 						L1423,1173L1423.4,855.5z"/>
 				</g>
-				
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000115476511238597016760000013920454040126612356_" filterUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="211.3">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="211.3" id="SVGID_00000022560206713947031380000011251843828767826334_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000115476511238597016760000013920454040126612356_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000112612993599675750130000010324615834699345797_" filterUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="211.3">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="1132.8" y="691.6" width="291.7" height="211.3" id="SVGID_00000022560206713947031380000011251843828767826334_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000112612993599675750130000010324615834699345797_)"}}>
@@ -6306,11 +6540,23 @@ const Hero = () => {
 			<g>
 				<g>
 					<g>
-						
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000063595747174603168280000008127048600685775522_" filterUnits="userSpaceOnUse" x="790.8" y="491" width="313.7" height="467.6">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="790.8" y="491" width="313.7" height="467.6" id="SVGID_00000144299357734431625720000010844961017512414655_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000063595747174603168280000008127048600685775522_)"}}>
-						
+								<defs>
+									
+										<filter id="Adobe_OpacityMaskFilter_00000111182378228170104920000013194919938525620129_" filterUnits="userSpaceOnUse" x="790.8" y="491" width="313.7" height="467.6">
+										<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+										<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+									</filter>
+								</defs>
 								
 									<mask maskUnits="userSpaceOnUse" x="790.8" y="491" width="313.7" height="467.6" id="SVGID_00000144299357734431625720000010844961017512414655_">
 									<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000111182378228170104920000013194919938525620129_)"}}>
@@ -6338,11 +6584,23 @@ const Hero = () => {
 						<path className="st399" d="M789.7,488.5l315.4,181l0.5,291.4l-316-177.2L789.7,488.5z M1102.8,671.7L792,493.4l-0.1,288.1
 							l311.4,174.6L1102.8,671.7z"/>
 					</g>
-				
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000155113484332155986480000000300795838708250298_" filterUnits="userSpaceOnUse" x="790.9" y="491" width="313.2" height="223">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="790.9" y="491" width="313.2" height="223" id="SVGID_00000076576935151688508070000013315258576108565122_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000155113484332155986480000000300795838708250298_)"}}>
-						
+							<defs>
+								
+									<filter id="Adobe_OpacityMaskFilter_00000086661190245776691990000004756767013451675044_" filterUnits="userSpaceOnUse" x="790.9" y="491" width="313.2" height="223">
+									<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+									<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+								</filter>
+							</defs>
 							
 								<mask maskUnits="userSpaceOnUse" x="790.9" y="491" width="313.2" height="223" id="SVGID_00000076576935151688508070000013315258576108565122_">
 								<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000086661190245776691990000004756767013451675044_)"}}>
@@ -6418,11 +6676,23 @@ const Hero = () => {
 			<g>
 				<g>
 					<g>
-						
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000008855505491132114400000006176444035528248966_" filterUnits="userSpaceOnUse" x="769.4" y="665.6" width="396.5" height="545.2">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="769.4" y="665.6" width="396.5" height="545.2" id="SVGID_00000007412751818025548110000017716096142475320985_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000008855505491132114400000006176444035528248966_)"}}>
-							
+								<defs>
+									
+										<filter id="Adobe_OpacityMaskFilter_00000173153225203847327520000009410655851371700145_" filterUnits="userSpaceOnUse" x="769.4" y="665.6" width="396.5" height="545.2">
+										<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+										<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+									</filter>
+								</defs>
 								
 									<mask maskUnits="userSpaceOnUse" x="769.4" y="665.6" width="396.5" height="545.2" id="SVGID_00000007412751818025548110000017716096142475320985_">
 									<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000173153225203847327520000009410655851371700145_)"}}>
@@ -6450,11 +6720,23 @@ const Hero = () => {
 						<path className="st399" d="M769.7,662.8l397.7,238.8v311.9L767.9,979.7L769.7,662.8z M1164.5,903.7L772.6,668.4l-1.7,309.2
 							l393.6,230.5L1164.5,903.7z"/>
 					</g>
-				
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000170254975227747428820000004415503058491245212_" filterUnits="userSpaceOnUse" x="770.9" y="665.6" width="395.1" height="283.4">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="770.9" y="665.6" width="395.1" height="283.4" id="SVGID_00000024688981323011561670000015662617802749595037_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000170254975227747428820000004415503058491245212_)"}}>
-						
+							<defs>
+								
+									<filter id="Adobe_OpacityMaskFilter_00000026155275722052021610000012607257562504225945_" filterUnits="userSpaceOnUse" x="770.9" y="665.6" width="395.1" height="283.4">
+									<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+									<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+								</filter>
+							</defs>
 							
 								<mask maskUnits="userSpaceOnUse" x="770.9" y="665.6" width="395.1" height="283.4" id="SVGID_00000024688981323011561670000015662617802749595037_">
 								<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000026155275722052021610000012607257562504225945_)"}}>
@@ -6573,11 +6855,23 @@ const Hero = () => {
 						l-13.2-5.4c-7.1-2.9-13.2,2.4-13.7,11.8l-0.4,8.1c0,1,0,2,0,3c-4.1,1.5-7,6.1-7.3,12.6l-1.6,33.3c-0.5,9.8,5.1,20.3,12.5,23.3
 						l25,10.3c7.4,3,13.8-2.5,14.2-12.3l1.6-33.3c0.3-6.6-2.1-13.5-6-18.2c0.2-0.9,0.2-1.7,0.3-2.7l0.4-8.1
 						C963.2,921.3,957.8,911.2,950.8,908.3"/>
-					
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000043443380759486430870000008058237331631738534_" filterUnits="userSpaceOnUse" x="883.5" y="916.3" width="103.2" height="103.2">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="883.5" y="916.3" width="103.2" height="103.2" id="SVGID_00000008146754218838310030000008208438628600977842_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000043443380759486430870000008058237331631738534_)"}}>
-							
+							<defs>
+								
+									<filter id="Adobe_OpacityMaskFilter_00000124846488346765408930000017035891182216481702_" filterUnits="userSpaceOnUse" x="883.5" y="916.3" width="103.2" height="103.2">
+									<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+									<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+								</filter>
+							</defs>
 							
 								<mask maskUnits="userSpaceOnUse" x="883.5" y="916.3" width="103.2" height="103.2" id="SVGID_00000008146754218838310030000008208438628600977842_">
 								<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000124846488346765408930000017035891182216481702_)"}}>
@@ -6603,11 +6897,23 @@ const Hero = () => {
 			</g>
 		</g>
 		<g>
-		
+			<defs>
+				
+					<filter id="Adobe_OpacityMaskFilter_00000055677545806916188670000012105946787432102272_" filterUnits="userSpaceOnUse" x="583.3" y="1194.3" width="270.4" height="137.5">
+					<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+					<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+				</filter>
+			</defs>
 			
 				<mask maskUnits="userSpaceOnUse" x="583.3" y="1194.3" width="270.4" height="137.5" id="SVGID_00000022546244684363776610000003838595630792348831_">
 				<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000055677545806916188670000012105946787432102272_)"}}>
-					
+					<defs>
+						
+							<filter id="Adobe_OpacityMaskFilter_00000165923164846150025280000002768814052078711175_" filterUnits="userSpaceOnUse" x="583.3" y="1194.3" width="270.4" height="137.5">
+							<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+							<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+						</filter>
+					</defs>
 					
 						<mask maskUnits="userSpaceOnUse" x="583.3" y="1194.3" width="270.4" height="137.5" id="SVGID_00000022546244684363776610000003838595630792348831_">
 						<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000165923164846150025280000002768814052078711175_)"}}>
@@ -7008,7 +7314,11 @@ const Hero = () => {
 					c-1-0.6-2.5-0.6-3.5,0l-42.9,24.9c-1,0.6-1,1.5,0,2l63.2,36.5c1,0.6,2.5,0.6,3.5,0l42.9-24.9
 					C3043.7,299.9,3043.7,299,3042.8,298.4"/>
 				<g>
-					
+					<defs>
+						<path id="SVGID_00000111161852016443466860000005452962590458764940_" d="M3052.5,246.5l-0.3,1.9l-7.5,47.6
+							c-0.1,0.8-0.6,1.2-1.2,1.1c-0.2,0-0.4-0.1-0.5-0.2l-62.4-36c-0.8-0.5-1.3-1.6-1.2-2.6l7.8-49.5c0.2-1,0.9-1.4,1.7-1l62.4,36
+							C3052.1,244.3,3052.7,245.5,3052.5,246.5z"/>
+					</defs>
 					<clipPath id="SVGID_00000106131171987924366630000009380339247625665175_">
 						<use href="#SVGID_00000111161852016443466860000005452962590458764940_"  style={{overflow:"visible"}}/>
 					</clipPath>
@@ -7515,15 +7825,32 @@ const Hero = () => {
 		</g>
 	</g>
 	<g>
-		
+		<defs>
+			
+				<filter id="Adobe_OpacityMaskFilter_00000150066319079920563600000005035147698467484057_" filterUnits="userSpaceOnUse" x="2880.2" y="483.3" width="164.9" height="340.5">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
 		
 			<mask maskUnits="userSpaceOnUse" x="2880.2" y="483.3" width="164.9" height="340.5" id="SVGID_00000131365970418058713600000011330056101741453216_">
 			<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000150066319079920563600000005035147698467484057_)"}}>
-			
+				<defs>
+					
+						<filter id="Adobe_OpacityMaskFilter_00000165201176865678859100000006897433190022559883_" filterUnits="userSpaceOnUse" x="2825.7" y="433.3" width="204.1" height="177.3">
+						<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+						<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+					</filter>
+				</defs>
 				
 					<mask maskUnits="userSpaceOnUse" x="2825.7" y="433.3" width="204.1" height="177.3" id="SVGID_00000131365970418058713600000011330056101741453216_">
 					<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000165201176865678859100000006897433190022559883_)"}}>
-				
+						<defs>
+							
+								<filter id="Adobe_OpacityMaskFilter_00000044897546252624918730000010066551350761550746_" filterUnits="userSpaceOnUse" x="2825.7" y="433.3" width="204.1" height="177.3">
+								<feFlood  style={{ floodColor: "white", floodOpacity: 1 }} result="back"/>
+								<feBlend  in="SourceGraphic" in2="back" mode="normal"/>
+							</filter>
+						</defs>
 						
 							<mask maskUnits="userSpaceOnUse" x="2825.7" y="433.3" width="204.1" height="177.3" id="SVGID_00000131365970418058713600000011330056101741453216_">
 							<g style={{filter:"url(#Adobe_OpacityMaskFilter_00000044897546252624918730000010066551350761550746_)"}}>
@@ -7753,10 +8080,3 @@ const Hero = () => {
 	</g>
 </g>
 </svg>
-
-        </div>
-    </div>
-  )
-}
-
-export default Hero

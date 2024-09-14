@@ -45,7 +45,11 @@
                 margin-top: 40px;
                 border-radius: 15px 0px 15px 0px;
                 cursor: pointer;
-            
+                transition: .2s all ease-in;
+                cursor: pointer;
+            &:hover {
+                background: #7209B7
+            }
         }
     }
 }
