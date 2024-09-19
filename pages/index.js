@@ -30,8 +30,7 @@ export default function Home() {
        <AboutSection />
        <PortfolioSection />
        <ClientReview />
-       <Contact />
-       <Footer />
+      
       </main>
     </>
   );

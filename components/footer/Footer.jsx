@@ -1,7 +1,9 @@
 import Image from "next/image"
 import styles from "./Footer.module.scss"
 import Link from "next/link";
+import { Inter } from "next/font/google";
 
+const inter = Inter({subsets:["latin"]})
 const Footer = () => {
   return (
     <section className={styles.footerSection}>
@@ -9,21 +11,20 @@ const Footer = () => {
             <Image src={"/minilogo.svg"} width={50} height={50} />
             <p>OCTA</p>
         </div> */}
-        <div className={styles.container}>
+        <div className={`${styles.container} ${inter.className}`}>
             <div className={styles.quickLinks}>
                 <h3>Services</h3>
                 <ul className={styles.servicesLinks}>
-                <li><Link href="#">Team Extension</Link>
+                <li><Link href="/services/teamExtension">Team Extension</Link>
                     </li>
-                <li><Link href="#">Outsourcing</Link>
+                <li><Link href="/services/teamExtension">Outsourcing</Link>
                     </li>
-                <li><Link href="#">Custom Software Development</Link>
+                <li><Link href="/services/custom-software-dev">Custom Software Development</Link>
                     </li>
-                <li><Link href="#">Software Modernization</Link>
+                <li><Link href="/serverices/software-modernization">Software Modernization</Link>
                     </li>
-                <li><Link href="#">Software Scaling</Link>
-                    </li>
-                <li><Link href="#">Consulting</Link>
+                
+                <li><Link href="/services/consulting">Consulting</Link>
                     </li>
             </ul>
             </div>
@@ -65,7 +66,7 @@ const Footer = () => {
                 </span>
             </div>
             </div>
-            <div className={styles.copy}>
+            <div className={`${styles.copy} ${inter.className}`}>
                 <hr className={styles.divider} />
                 <p>© 2024 Octa. All rights reserved. Designed with precision and passion.</p>
             </div>

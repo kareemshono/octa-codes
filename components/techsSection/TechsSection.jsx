@@ -7,7 +7,7 @@ const inter = Inter({subsets:["latin"]})
 
 const TechsSection = () => {
   return (
-    <section className={`${styles.techsSectionContainer} ${inter.className}`}>
+    <section id="techs" className={`${styles.techsSectionContainer} ${inter.className}`}>
         <ParticlesBackground />
         <div className={styles.clip}>
             <div className={styles.clipText}>

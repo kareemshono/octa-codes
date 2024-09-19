@@ -6,7 +6,7 @@ import { projects } from "./projects"
 const PortfolioSection = () => {
   
   return (
-    <section className={styles.portfolioSectionContainer}>
+    <section id="portfolio" className={styles.portfolioSectionContainer}>
         <div className={styles.header}>
             <h2 className={styles.title}>Projects We've Built</h2>
         </div>

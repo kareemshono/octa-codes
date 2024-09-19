@@ -1,8 +1,11 @@
+import { Inter } from "next/font/google"
 import styles from "./Contact.module.scss"
 
+
+const inter = Inter({subsets:["latin"]})
 const Contact = () => {
   return (
-    <section className={styles.contactSection}>
+    <section id="contact" className={`${styles.contactSection} ${inter.className}`}>
      <div className={styles.colLeft}>
         <div className={styles.header}>
             <h1>Contact</h1>
