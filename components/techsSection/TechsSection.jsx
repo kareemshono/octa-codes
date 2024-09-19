@@ -22,7 +22,7 @@ const TechsSection = () => {
             </h1>
             </div>
             <div className={styles.clipContent}>
-                <Image src="/nextJS.svg" width={75} height={75} alt="tech icon" />
+                <Image src="/nextJs.svg" width={75} height={75} alt="tech icon" />
                 <Image src="/react.svg" width={75} height={75} alt="tech icon" />
                 <Image src="/ts.svg" width={75} height={75} alt="tech icon" />
                 <Image src="/node.svg" width={75} height={75} alt="tech icon" />
