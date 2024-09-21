@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-
+import styles from "./ParticlesBackground.module.scss"
 
 const ParticlesBackground = () => {
     const [init, setInit] = useState(false);
@@ -15,12 +15,13 @@ const ParticlesBackground = () => {
     }, []);
 
     const particlesLoaded = (container) => {
-        console.log(container);
+       
+    
     };
 
     return (
         <>
-        <div className="particlesContainer">
+        <div className={styles.particlesContainer}>
             
             {init && (
                 <Particles
@@ -36,7 +37,8 @@ const ParticlesBackground = () => {
                             repeat: "no-repeat",
                             size: "cover",
                         },
-                        fpsLimit: 120,
+                        
+                        fpsLimit: 60,
                         interactivity: {
                             events: {
                                 onClick: {

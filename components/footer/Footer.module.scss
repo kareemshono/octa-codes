@@ -1,3 +1,16 @@
+@mixin mobile {
+    @media screen and (max-width:576px) {
+        @content
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }}
+@mixin bigScreen {
+    @media screen and (min-width: 1600px) and (max-width:2400px) {
+      @content
+  }}
 .footerSection{
     width: 100%;
     height: 100%;
@@ -8,6 +21,9 @@
     box-sizing: border-box;
     z-index: +9;
    padding: 4rem 4rem 0rem 4rem;
+  @include mobile {
+    padding: 1rem;
+  }
     .logoContainer {
         
         text-align: center;
@@ -18,6 +34,9 @@
     .container {
         display: flex;
         position: relative;
+        @include mobile {
+            flex-direction: column;
+        }
     }
     .copy{
         text-align: center;
@@ -37,6 +56,7 @@
     .quickLinks {
         color: #f1f1f1;
         width: 20%;
+       
         ul {
             list-style: none;
             padding: 2rem 0rem;
@@ -52,11 +72,17 @@
                 }
             }
         }
+        @include mobile {
+            width: 100%;
+        }
     }
     .otherLinks{
         color: #f1f1f1;
         margin-left: 5rem;
         width: 20%;
+        @include mobile {
+            width: 100%;
+        }
         ul {
             list-style: none;
             padding: 2rem 0rem;
@@ -80,6 +106,11 @@
         gap: 10px;
         justify-content: flex-end;
         align-items: center;
+        @include mobile {
+            width: 100%;
+            justify-content: center;
+            padding: 1rem;
+        }
         
         h3{
             color: #f1f1f1;

@@ -1,8 +1,22 @@
+
+@mixin mobile {
+    @media screen and (max-width:576px) {
+        @content
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }}
+@mixin bigScreen {
+    @media screen and (min-width: 1600px) and (max-width:2400px) {
+      @content
+  }}
 .aboutSectionContainer{
     height: 100vh;
     width: 100%;
     box-sizing: border-box;
-    background-image: url("/aboutbg.svg");
+    background-image: url("/aboutbg3.svg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,12 +24,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding: 2rem;
     .aboutCol {
         width: 40%;
         height: 90%;
         box-sizing: border-box;
         margin-right: 5rem;
-        padding: 5rem;
+        padding: 3rem;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -26,14 +41,24 @@
         
         -webkit-backdrop-filter: blur(5px);
         border-radius: 10px;
+        @include bigScreen {
+            height: 70%;
+            gap: 30px;
+        }
+        @include mobile {
+            width: 100%;
+            margin: 0;
+        }
         .title{
             color: #f1f1f1;
         }
         .subtitle{
             color: #f1f1f1;
+            margin-bottom: 20px;
         }
         .text {
             color: #f1f1f1d8;
+            font-size: .9rem;
         }
         .btn{
            

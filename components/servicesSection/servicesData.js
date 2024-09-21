@@ -27,7 +27,7 @@ export const servicesData = [
 ]
     },
     {id:1,
-     imgUrl:"/itConsult.svg",
+     imgUrl:"/itConsulting.svg",
      title:" IT Consulting",
      description:"Software development consulting optimizes processes, architecture, and technology, ensuring efficiency, scalability, and tailored strategies for successful, goal-aligned projects."   
     },
@@ -37,22 +37,23 @@ export const servicesData = [
     //  description:"Our Solutions protect your business with advanced measures against threats. We offer threat detection, data encryption, and monitoring to ensure your information stays secure. Safeguard your assets with our comprehensive security services"
     // },
     {id:2,
-        imgUrl:"/cyberSec2.svg",
+        imgUrl:"/cyberSecurity.svg",
         title:"Software modernization",
         description:"Legacy systems delay new features and complicate updates. Outdated software hinders innovation and onboarding. We modernize these systems, streamline processes, and accelerate development for greater efficiency."
     },
     {id:3,
-     imgUrl:"/itConsult.svg",
+     imgUrl:"/softwareArch.svg",
      title:"Software scaling",
      description: "Scaling software demands expertise and resources, but tight budgets and slow hiring can impede progress. Our team accelerates scaling with cost-efficient, high-performance solutions to keep you competitive"
     },
     {id:4,
-     imgUrl:"/manage.svg",
+
+     imgUrl:"/service.svg",
      title:"Team extension",
      description:   "Your tech team works directly with the Octa developers. Your Product Owner/CTO coordinates the development team."
     },
     {id:5,
-     imgUrl:"/network.svg",
+     imgUrl:"/teamexbanner.svg",
      title:"Outsourcing",
      description:   "We implement your software project - from concept to go-live. Octa takes over the technical project management."
     },

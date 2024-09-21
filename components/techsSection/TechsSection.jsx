@@ -12,36 +12,31 @@ const TechsSection = () => {
         <div className={styles.clip}>
             <div className={styles.clipText}>
             <h1>
-                Technologies
+                Technologies we use
             </h1>
-            <h1>
-                We
-            </h1>
-            <h1>
-                Use
-            </h1>
+           
             </div>
             <div className={styles.clipContent}>
-                <Image src="/nextJs.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/react.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/ts.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/node.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/laravel.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/postqres.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/mysql.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/flutter.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/firebase.svg" width={75} height={75} alt="tech icon" />
+                <Image src="/nextJs.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/react.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/ts.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/node.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/laravel.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/postqres.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/mysql.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/flutter.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/firebase.svg" width={65} height={65} alt="tech icon" />
                 
-                <Image src="/mongodb.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/xd.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/ps.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/ai.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/figma.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/sass.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/wordpress.svg" width={75} height={75} alt="tech icon" />
+                <Image src="/mongodb.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/xd.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/ps.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/ai.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/figma.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/sass.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/wordpress.svg" width={65} height={65} alt="tech icon" />
                 
-                <Image src="/azure.svg" width={75} height={75} alt="tech icon" />
-                <Image src="/aws.svg" width={75} height={75} alt="tech icon" />
+                <Image src="/azure.svg" width={65} height={65} alt="tech icon" />
+                <Image src="/aws.svg" width={65} height={65} alt="tech icon" />
                 <p className={styles.para}>Our projects are powered by cutting-edge technologies, ensuring reliability, scalability, and <br />  high performance. From modern front-end 
                     frameworks to  robust back-end solutions, <br /> we utilize the best tools to deliver exceptional results.</p>
             </div>

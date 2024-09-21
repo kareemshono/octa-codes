@@ -2,7 +2,7 @@ import Head from "next/head"
 import styles from "./TeamExtension.module.scss"
 import Image from "next/image"
 import { Inter } from "next/font/google"
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const inter = Inter({subsets:["latin"]});
 //card
@@ -41,13 +41,17 @@ const TeamExtension = () => {
             description:"Our support and maintenance service ensures that your software is always up to date and runs smoothly.A modern software system must constantly evolve as the digital ecosystem changes. Your Octa team will be happy to support you with the expertise it has built up for your project."
         },
     ])
+    const gridRef = useRef(null);
+    const cardRefs = useRef([]); // Create refs for all the cards
     
     const [activeCard, setActiveCard] = useState(null); // Track the active card's ID
     const Card = ({id,imgUrl,title,description}) => {
         const isActive = id === activeCard; // Check if this card is active
         return (
-            <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} />
+            <div 
+            ref={(el) => (cardRefs.current[id] = el)}
+            onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
+                <Image src={imgUrl} width={200} height={100} alt={title}/>
                 <p className={styles.title}>{title}</p>
                 {isActive && 
           <div className={`${styles.description}`}>
@@ -57,6 +61,39 @@ const TeamExtension = () => {
             </div>
         )
     }
+    useEffect(() => {
+        // Dynamically import gsap and ScrollTrigger
+        const loadGsap = async () => {
+          const { default: gsap } = await import("gsap");
+          const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+          
+          gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger with GSAP
+    
+          const cards = cardRefs.current;
+          gsap.fromTo(
+            cards,
+            {
+              opacity: 0,
+              y: 50,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              stagger: 0.2,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: gridRef.current,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        };
+    
+        loadGsap();
+      }, []);
   return (
     <>
     <Head>
@@ -74,7 +111,7 @@ const TeamExtension = () => {
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/teamexbanner.svg"} width={600} height={400} />
+                <Image src={"/teamexbanner.svg"} width={600} height={400} alt="vector" />
             </div>
         </section>
         <section className={styles.modelsSec}>
@@ -87,7 +124,7 @@ const TeamExtension = () => {
             </div>
             <div className={styles.body}>
                 <div className={styles.colLeft}>
-                    <Image src={"/teamEx.svg"} width={200} height={100} />
+                    <Image src={"/teamEx.svg"} width={200} height={100} alt="vector" />
                     <h2>Team extension</h2>
                     <p className={styles.subtitle}>Your tech team works directly with the Octa developers. Your Product Owner/CTO coordinates the development team.</p>
                     <div className={styles.list}>
@@ -120,13 +157,13 @@ const TeamExtension = () => {
                  
                 </div>
                 <div className={styles.colRight}>
-                <Image src={"/outsource.svg"} width={200} height={100} />
+                <Image src={"/outsource.svg"} width={200} height={100} alt="vector" />
                     <h2>Outsourcing</h2>
                     <p className={styles.subtitle}>We implement your software project - from concept to go-live. Octa takes over the technical project management.</p>
                     <div className={styles.list}>
                     <ul>
                         <li>
-                            <p>You receive an offer including costs, time frame and required expertise <br/> as well as a roadmap for your project.</p>
+                            <p>You receive an offer including costs, time frame and required expertise </p>
                         </li>
                         <li>
                             <p>We develop the technical concept and the project roadmap (including prototype if required).</p>
@@ -170,31 +207,31 @@ const TeamExtension = () => {
             </div>
             <div className={styles.steps}>
                 <div className={styles.step}>
-                    <Image src={"/one.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/one.svg"} width={100} height={100} alt="number"/>
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="arrow right"/>
                     <h2 className={styles.title}>Setting goals for the collaboration</h2>
                     <p>We attach great importance to recording our customers' expectations of the collaboration right from the start and communicating them to the entire team.</p>
                     <p>For example, a joint project roadmap with clearly defined milestones is suitable for this.</p>
                     <p>We also make sure that both teams know what the collaboration processes should look like. This ensures that everything runs smoothly right from the start.</p>
                 </div>
                 <div className={styles.step}>
-                    <Image src={"/two.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/two.svg"} width={100} height={100} alt="number"/>
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="arrow right"/>
                     <h2 className={styles.title}>Getting to know your domain</h2>
                     <p>We ensure that our development team has a deep understanding of your business case.</p>
                     <p>The Octa IT experts familiarize themselves comprehensively with your business logic, the requirements for your software, its technical and content context and the end users.</p>
                     <p>In this way, the Octa experts become sparring partners for your team and create real added value.</p>
                 </div>
                 <div className={styles.step}>
-                    <Image src={"/three.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/three.svg"} width={100} height={100}alt="number" />
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="arrow right"/>
                     <h2 className={styles.title}>Establishing successful communication</h2>
                     <p>Effective communication is the key to every successful project.</p>
                     <p>We work with you to define the communication channels and tools, select suitable meeting formats and determine the frequency and reporting requirements.</p>
                     <p>We focus on the needs of our customers and are happy to advise you.</p>
                 </div>
                 <div className={styles.step}>
-                    <Image src={"/four.svg"} width={100} height={100} />
+                    <Image src={"/four.svg"} width={100} height={100} alt="number"/>
                     <h2 className={styles.title}>Technical onboarding</h2>
                     <p>To enable efficient collaboration, the Octa IT experts need access to your development environment, your communication tools, your ticket system and other relevant tools.</p>
                     <p>During technical onboarding, we support you with our checklists and ensure that we think of everything right from the start.</p>
@@ -251,7 +288,7 @@ const TeamExtension = () => {
                 <p>This service model is suitable for you if your team does not have the capacity or know-how to take over <br />
                      the technical project management and coordinate the development team.</p>
             </div>
-            <div className={styles.grid}>
+            <div ref={gridRef} className={styles.grid}>
                 {outsourceData?.map(card => {
                     return <Card   key={card.id} id={card.id} title={card.title} imgUrl={card.imgUrl} description={card.description} />
                 })}

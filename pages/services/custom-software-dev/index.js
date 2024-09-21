@@ -43,7 +43,7 @@ const CustomSoftware = () => {
         const isActive = id === activeCard; // Check if this card is active
         return (
             <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} />
+                <Image src={imgUrl} width={200} height={100} alt={`${title}`} />
                 <p className={styles.title}>{title}</p>
                 {isActive && 
           <div className={`${styles.description}`}>
@@ -71,7 +71,7 @@ const CustomSoftware = () => {
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/customSoft.svg"} width={600} height={400} />
+                <Image src={"/customSoft.svg"} priority width={500} height={400} alt="vector" />
             </div>
         </section>
         <section className={styles.header}>
@@ -114,19 +114,19 @@ const CustomSoftware = () => {
         </section>
         <section className={styles.grid}>
             <div className={styles.card}>
-                <Image src={"/cloudWeb.svg"} height={150} width={200} />
+                <Image src={"/cloudWeb.svg"} height={150} width={200}  alt="vector"/>
                 <h2>Mobile Apps, Web Apps & Cloud Solutions</h2>
             </div>
             <div className={styles.card}>
-                <Image src={"/network.svg"} height={150} width={200} />
+                <Image src={"/network.svg"} height={150} width={200}  alt="vector"/>
                 <h2>Network Architecure</h2>
             </div>
             <div className={styles.card}>
-                <Image src={"/ui2.svg"} height={150} width={200} />
+                <Image src={"/ui2.svg"} height={150} width={200}  alt="vector"/>
                 <h2>Interfaces to ERP, CRM & e-commerce systems</h2>
             </div>
             <div className={styles.card}>
-                <Image src={"/custom.svg"} height={150} width={200} />
+                <Image src={"/custom.svg"} height={150} width={200}  alt="vector"/>
                 <h2>Custom Software Solutions</h2>
             </div>
         </section>
@@ -159,30 +159,30 @@ const CustomSoftware = () => {
             </div>
             <div className={styles.body}>
             <div className={styles.step}>
-                    <Image src={"/one.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/one.svg"} width={100} height={100}alt="number" />
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="arrow right" />
                     <h2 className={styles.title}>No-obligation consultation</h2>
                     <p>You will receive a professional assessment of your software project. Our experts will advise you on how to tackle the project successfully.</p>
                     
                 </div>
                 <div className={styles.step}>
-                    <Image src={"/two.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/two.svg"} width={100} height={100}alt="number" />
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="arrow right" />
                     <h2 className={styles.title}>Free quote & roadmap</h2>
                     <p>Octa IT experts analyze your requirements.</p>
                     <p>Within a few days, you will receive a free cost estimate including a roadmap for your project.</p>
 
                 </div>
                 <div className={styles.step}>
-                    <Image src={"/three.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/three.svg"} width={100} height={100} alt="number"/>
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight}  alt="arrow right"/>
                     <h2 className={styles.title}>Technical concept</h2>
                     <p>If you decide to implement your project with us, the first thing we do is work out the technical concept.</p>
                     <p>A well thought-out technical concept is the basis for a flexible, future-proof solution. You benefit from our many years of experience and modern technologies.</p>
                     
                 </div>
                 <div className={styles.step}>
-                    <Image src={"/four.svg"} width={100} height={100} />
+                    <Image src={"/four.svg"} width={100} height={100} alt="number"/>
                     <h2 className={styles.title}>Agile development of your software</h2>
                     <p>We are responsible for and manage the development of your software until it goes live.</p>
                     <p>You will receive regular updates on the progress of the project. Regular releases are also possible.</p>

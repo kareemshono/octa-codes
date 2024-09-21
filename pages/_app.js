@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
     // Simulate loading time (2 seconds)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 2000);
 
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);

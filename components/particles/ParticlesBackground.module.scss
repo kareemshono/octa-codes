@@ -1,0 +1,9 @@
+.particlesContainer{
+   position: absolute;
+    width: 100%;
+    max-height: 100vh!important;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure particles are behind other content */
+
+  }

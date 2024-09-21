@@ -44,7 +44,7 @@ const Consulting = () => {
         const isActive = id === activeCard; // Check if this card is active
         return (
             <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} />
+                <Image src={imgUrl} width={200} height={100} alt={`data ${title}`} />
                 <p className={styles.title}>{title}</p>
                 {isActive && 
           <div className={`${styles.description}`}>
@@ -75,7 +75,7 @@ const Consulting = () => {
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/consulting.svg"} width={600} height={400} />
+                <Image src={"/consulting.svg"} width={400} height={400} alt="consulting vector" />
             </div>
         </section>
         <section className={styles.header}>
@@ -122,16 +122,16 @@ const Consulting = () => {
         </section>
         <section className={styles.steps}>
         <div className={styles.step}>
-                    <Image src={"/three.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/three.svg"} width={100} height={100} alt="number" />
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="right arrow"/>
                     <h2 className={styles.title}>Preliminary analysis of your project</h2>
                     <p>Octa IT experts familiarize themselves intensively with your software project.</p>
                     <p>We create an initial analysis and identify relevant topics for the joint tech assessment workshop.</p>
                     
                 </div>
         <div className={styles.step}>
-                    <Image src={"/three.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/three.svg"} width={100} height={100} alt="number"/>
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="right arrow" />
                     <h2 className={styles.title}>Tech Assessment Workshop</h2>
                     <p>Octa IT experts work with your tech team to identify the potential and challenges of the project and develop solutions.</p>
                     <p>We develop a common understanding of the technical requirements.</p>
@@ -139,8 +139,8 @@ const Consulting = () => {
                     
                 </div>
         <div className={styles.step}>
-                    <Image src={"/three.svg"} width={100} height={100} />
-                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} />
+                    <Image src={"/three.svg"} width={100} height={100} alt="number" />
+                    <Image src={"/arrowRight.svg"} width={50} height={50} className={styles.arrowRight} alt="right arrow" />
                     <h2 className={styles.title}>Tech Assessment Report</h2>
                     <p>Based on the results of the workshop, our experts prepare a detailed tech assessment report for your project.</p>
                     <p>It contains a professional assessment of your project, technical recommendations for the next steps and a cost estimate including costs, time frame and required expertise.</p>

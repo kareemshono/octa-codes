@@ -3,35 +3,51 @@ import Image from "next/image";
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
 import { Inter } from "next/font/google";
+import { useRouter } from "next/router"; // Import useRouter
 
 const inter = Inter({ subsets: ["latin"] });
 
 const Navbar = () => {
+  const router = useRouter(); // Get router instance
   const [hamToggled, setHamToggled] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const observerRef = useRef(null); // Ref for the observed element
+  const observerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setScrolled(!entry.isIntersecting); // Set scrolled to true when element leaves the viewport
+        setScrolled(!entry.isIntersecting);
       },
-      { threshold: 0.1 } // Adjust threshold as needed
+      { threshold: 0.1 }
     );
 
     if (observerRef.current) {
-      observer.observe(observerRef.current); // Observe the element
+      observer.observe(observerRef.current);
     }
 
-    // Clean up observer on component unmount
     return () => {
       if (observerRef.current) observer.unobserve(observerRef.current);
     };
   }, []);
 
+  // Function to handle scroll to specific section
+  const scrollToSection = (hash) => {
+    router.push("/").then(() => {
+      // Scroll to the section after navigating to the home page
+      setTimeout(() => {
+        const section = document.querySelector(hash);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); // Adding a delay to ensure the page has navigated to the home first
+    });
+  };
+
+  // Determine if the current path includes "/services"
+  const isOnServicesPage = router.pathname.includes("/services");
+
   return (
     <>
-      {/* This div will act as the observed element */}
       <div ref={observerRef} style={{ height: "0px", marginTop: "0px" }}></div>
 
       <div
@@ -55,6 +71,9 @@ const Navbar = () => {
           </button>
           <ul className={styles.navList}>
             <li className={styles.navItem}>
+              <Link className={styles.navLink} href="/">Home</Link>
+            </li>
+            <li className={styles.navItem}>
               <Link href="#services" className={styles.navLink}>
                 Services
                 <span className={styles.arrowDrop}>
@@ -69,7 +88,6 @@ const Navbar = () => {
                   </svg>
                 </span>
               </Link>
-              {/* Submenu */}
               <ul className={styles.servicesList}>
                 <li>
                   <Link href="/services/teamExtension">Team Extension</Link>
@@ -83,20 +101,52 @@ const Navbar = () => {
                 <li>
                   <Link href="/services/software-modernization">Software Modernization</Link>
                 </li>
-                
                 <li>
                   <Link href="/services/consulting">Consulting</Link>
                 </li>
               </ul>
             </li>
             <li className={styles.navItem}>
-              <Link href="#techs" className={styles.navLink}>Techs</Link>
+              {isOnServicesPage ? (
+                <a
+                  className={styles.navLink}
+                  onClick={() => scrollToSection("#techs")}
+                >
+                  Techs
+                </a>
+              ) : (
+                <Link href="#techs" className={styles.navLink}>
+                  Techs
+                </Link>
+              )}
             </li>
             <li className={styles.navItem}>
-              <Link href="#about" className={styles.navLink}>About Us</Link>
+              {isOnServicesPage ? (
+                <a
+                  className={styles.navLink}
+                  onClick={() => scrollToSection("#about")}
+                >
+                  About Us
+                </a>
+              ) : (
+                <Link href="#about" className={styles.navLink}>
+                  About Us
+                </Link>
+              )}
             </li>
             <li className={styles.navItem}>
-              <Link href="#portfolio" className={styles.navLink}>Portfolio</Link>
+              {isOnServicesPage ? (
+                <a
+                  className={styles.navLink}
+                  onClick={() => scrollToSection("#portfolio")}
+                >
+                  Portfolio
+                </a>
+              ) : (
+                <Link href="#portfolio" className={styles.navLink}>
+                  Portfolio
+                </Link>
+              )}
             </li>
             <li className={styles.navItem}>
               <Link href="#contact" className={styles.navLink}>Contact</Link>

@@ -43,7 +43,7 @@ const SoftwareModernization = () => {
         const isActive = id === activeCard; // Check if this card is active
         return (
             <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} />
+                <Image src={imgUrl} width={200} height={100} alt={title} />
                 <p className={styles.title}>{title}</p>
                 {isActive && 
           <div className={`${styles.description}`}>
@@ -70,7 +70,7 @@ const SoftwareModernization = () => {
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/softModer.svg"} width={600} height={400} />
+                <Image src={"/softModer.svg"} width={500} height={400} alt="vector"/>
             </div>
         </section>
         <section className={styles.text}>
