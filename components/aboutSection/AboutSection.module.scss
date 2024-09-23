@@ -25,6 +25,9 @@
     justify-content: flex-end;
     align-items: center;
     padding: 3rem;
+    @include mobile {
+        padding: 1rem;
+    }
     .aboutCol {
         width: 43%;
         height: 90%;

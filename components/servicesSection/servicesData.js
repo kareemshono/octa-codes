@@ -2,6 +2,7 @@ export const servicesData = [
     {id:0,
      imgUrl:"/webdev.svg",
      title:"custom software development",
+     url:"/services/custom-software-dev",
      description:"Our dedicated Octa developers dive into your business logic, crafting long-term software solutions that drive success to your businesses.",
         subDescription:"We put together a dedicated team of developers. They only work on your project. You benefit from our expertise and a quick project start."
         ,subServices:[{id:0,
@@ -29,6 +30,7 @@ export const servicesData = [
     {id:1,
      imgUrl:"/itConsulting.svg",
      title:" IT Consulting",
+     url:"/services/consulting",
      description:"Software development consulting optimizes processes, architecture, and technology, ensuring efficiency, scalability, and tailored strategies for successful, goal-aligned projects."   
     },
     // {id:2,
@@ -39,22 +41,26 @@ export const servicesData = [
     {id:2,
         imgUrl:"/cyberSecurity.svg",
         title:"Software modernization",
+        url:"/services/software-modernization",
         description:"Legacy systems delay new features and complicate updates. Outdated software hinders innovation and onboarding. We modernize these systems, streamline processes, and accelerate development for greater efficiency."
     },
     {id:3,
      imgUrl:"/softwareArch.svg",
      title:"Software scaling",
+     url:"/services/software-modernization",
      description: "Scaling software demands expertise and resources, but tight budgets and slow hiring can impede progress. Our team accelerates scaling with cost-efficient, high-performance solutions to keep you competitive"
     },
     {id:4,
 
      imgUrl:"/service.svg",
      title:"Team extension",
+     url:"/services/teamExtension",
      description:   "Your tech team works directly with the Octa developers. Your Product Owner/CTO coordinates the development team."
     },
     {id:5,
      imgUrl:"/teamexbanner.svg",
      title:"Outsourcing",
+     url:"/services/teamExtension",
      description:   "We implement your software project - from concept to go-live. Octa takes over the technical project management."
     },
 ]

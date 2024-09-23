@@ -1,10 +1,20 @@
 import Image from "next/image"
 import styles from "./ServiceCard.module.scss"
 import React from "react"
+import { useRouter } from "next/router"
 
-const ServiceCard = React.forwardRef (({imgUrl,serviceTitle,serviceDescription},ref) => {
+const ServiceCard = React.forwardRef (({imgUrl,serviceTitle,url,serviceDescription},ref) => {
+  const router = useRouter();
+  const navigate = (url) => {
+    console.log("Navigating to:", url); // Log the URL for debugging
+    if (url) {
+      router.push(url);
+    } else {
+      console.error("Invalid URL provided.",url);
+    }
+  };
   return (
-    <div ref={ref} className={styles.serviceCardCotnainer}>
+    <div onClick={() => navigate(url)} ref={ref} className={styles.serviceCardCotnainer}>
         <span></span>
         <span></span>
         <span></span>

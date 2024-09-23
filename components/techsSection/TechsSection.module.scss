@@ -73,12 +73,11 @@
                 margin: 1rem auto;
             width: 80%;
             
-            
-            
 
             }
             @include mobile {
                 gap: 20px;
+                padding: 1rem;
             }
         
         }

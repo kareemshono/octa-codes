@@ -51,7 +51,7 @@ const ServicesSection = () => {
       </div>
       <div ref={gridRef} className={styles.sectionContent}>
         {servicesData.map(item => {
-          return <ServiceCard ref={(el) => (cardRefs.current[item.id] = el)} key={item.id} imgUrl={item.imgUrl} serviceTitle={item.title} serviceDescription={item.description} />
+          return <ServiceCard ref={(el) => (cardRefs.current[item.id] = el)} key={item.id} url={item.url} imgUrl={item.imgUrl} serviceTitle={item.title} serviceDescription={item.description} />
         })}
       </div>
       
