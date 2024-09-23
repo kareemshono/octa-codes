@@ -57,7 +57,7 @@ const Navbar = () => {
       >
         <div className={styles.logo}>
           <Link href="/">
-            <Image src="logo.svg" width={100} height={100} alt="logo" />
+            <Image src="logo.svg" width={75} height={75} alt="logo" />
           </Link>
         </div>
         <nav className={styles.navbar}>

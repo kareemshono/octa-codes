@@ -20,7 +20,7 @@
     position: fixed;
     z-index: 2;
     box-sizing: border-box;
-    padding: 3rem;
+    padding: 2rem 3rem;
     &.scrolled {
         background: rgba(20, 0, 66, 0.668);
         box-shadow: 0px 0px 3px  #4895ef;
@@ -34,12 +34,12 @@
       list-style-type: none;
       display: flex;
       margin: 0;
-      padding: 0 1rem;
+      padding: 0 .5rem;
       align-items: center;
       transition: 0.5s all ease-in-out;
       
       .navItem {
-        padding: 0rem 0.5rem;
+        padding: 0rem 0.3rem;
         margin: 0.2rem;
         position: relative; /* For submenu positioning */
         .navLink:nth-child(1) {
@@ -52,7 +52,7 @@
           text-decoration: none;
           letter-spacing: 0.5px;
           margin: 0 0.2rem;
-          padding: 0.5rem 1rem;
+          padding: 0.2rem 1rem;
           border: 2px solid transparent;
           transition: all ease-in-out 0.4s;
           cursor: pointer;

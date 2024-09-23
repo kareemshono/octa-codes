@@ -12,6 +12,7 @@ const ClientReview = () => {
     <section className={styles.clientReviewContainer}>
       <div className={styles.header}>
       <h1>What Our Clients Say About Us</h1>
+      <p>Hear from Those Who Trust Our Expertise</p>
       </div>
       
       <div className={styles.swiperContainer}>

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google"
 import { gsap } from 'gsap';
 import styles from "./Hero.module.scss"
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -57,7 +58,9 @@ const Hero = () => {
             <p className={styles.heroSubtitle}>
             Empowering businesses with innovative, tailored IT solutions that drive growth, streamline operations, and transform ideas into digital reality.
             </p>
-            <button className={`${inter.className}`}>Start Now</button>
+            <button className={`${inter.className}`}>
+				<Link href="#services">Start Now</Link>
+				</button>
         </div>
         <div className={`${styles.heroLogo}`}  >
 

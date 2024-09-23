@@ -1,3 +1,4 @@
+import Chat from "@/components/chat/Chat";
 import Contact from "@/components/contact/Contact";
 import Footer from "@/components/footer/Footer";
 import LoadingComponent from "@/components/loadingComponent/LoadingComponent";
@@ -11,7 +12,7 @@ export default function App({ Component, pageProps }) {
     // Simulate loading time (2 seconds)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
   <Navbar />
   <Component {...pageProps} />
   <Contact />
+  <Chat />
   <Footer />
   </>
   

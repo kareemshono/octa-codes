@@ -1,16 +1,18 @@
-import Image from "next/image";
+
 import styles from "./PortfolioItem.module.scss";
 import React from "react";
 import Modal from "../modal/Modal";
 
 
-const PortfolioItem = ({id,title,imgUrl, type, description}) => {
+
+const PortfolioItem = React.forwardRef (({id,title,imgUrl, type, description},ref) => {
   const [showModal,setShowModal] = React.useState(false)
   return (
     <>
-    <div className={styles.itemContainer}>
-        <div className={styles.imgContainer}>
-            <Image src={imgUrl} width={300} height={150} alt={title} />
+    <div ref={ref} style={{backgroundImage:`url(${imgUrl})`}} className={styles.itemContainer}>
+        <div  className={styles.imgContainer}>
+           
+          
         </div>
         {/* transition container */}
 
@@ -31,7 +33,8 @@ const PortfolioItem = ({id,title,imgUrl, type, description}) => {
     description={description} setShowModal={setShowModal}  /> : ""}
     </>
   )
-}
-
+})
+// Add displayName for React DevTools (optional but helpful for debugging)
+PortfolioItem.displayName = "PortfolioItem";
 
 export default PortfolioItem;
