@@ -44,8 +44,14 @@ const Consulting = () => {
         const isActive = id === activeCard; // Check if this card is active
         return (
             <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} alt={`data ${title}`} />
-                <p className={styles.title}>{title}</p>
+                    <div className={styles.header}>
+                    <Image src={imgUrl} width={200} height={100} alt={`data ${title}`} />
+                    </div>
+                    <div className={styles.text}>
+                    <p className={styles.title}>{title}</p>
+                    </div>
+                   
+                
                 {isActive && 
           <div className={`${styles.description}`}>
             <p>{description}</p>
@@ -66,16 +72,19 @@ const Consulting = () => {
         <main className={`${styles.main} ${inter.className}`}>
         <section className={styles.bannerSec}>
         <div className={styles.colLeft}>
-                <h1 className={styles.title}>Lay the foundation for a successful software solution & Get a professional recommendation for your project</h1>
+                <h1 className={styles.title}>Lay the foundation for a <span>successful </span> software solution & Get a professional recommendation for your project</h1>
                 
             <p>Many companies lack the time or expertise to approach and implement new software projects professionally.
                 </p>
+                <p>
                 At Octa, our IT consulting services ensure you get the right technology, strategy, and implementation plan to meet your business goals. Let us handle the details while you focus on growth and innovation.
+                </p>
+               
             
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/consulting.svg"} width={400} height={400} alt="consulting vector" />
+                <Image src={"/consulting.svg"} width={400} height={300} alt="consulting vector" />
             </div>
         </section>
         <section className={styles.header}>

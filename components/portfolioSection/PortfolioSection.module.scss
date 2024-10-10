@@ -30,15 +30,26 @@
             color: #f1f1f1;
             text-align: center;
             font-size: 2rem;
+            @include mobile {
+               font-size: 1.2rem;
+            }
         }
         .subtitle {
          text-align: center;
          color: #f1f1f1c0;
          margin-top: 1rem;
+         @include mobile {
+            font-size: .9rem;
+         }
+        }
+        @include mobile {
+         padding: 1rem;
+         margin-bottom: 2rem;
         }
      }
      @include mobile {
       height: 100%;
+      padding: 1.5rem;
      }
      .content{
         width: 100%;

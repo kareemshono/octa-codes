@@ -1,3 +1,16 @@
+@mixin mobile {
+    @media screen and (max-width:576px) {
+        @content
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }}
+@mixin bigScreen {
+    @media screen and (min-width: 1600px) and (max-width:2400px) {
+      @content
+  }}
 .clientReviewContainer {
     height: 100%;
     box-sizing: border-box;
@@ -12,6 +25,9 @@
             text-align: center;
             font-size: 2rem;
             margin-bottom: 1rem;
+            @include mobile {
+                font-size: 1.5rem;
+            }
         }
         p{
             text-align: center;
@@ -23,6 +39,10 @@
             box-sizing: border-box;
             
          }
+        @include mobile {
+            padding: 2rem;
+            margin: 2rem 0;
+        }
      }
      .reviewContainer {
         width: 100%;
@@ -34,6 +54,10 @@
     -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
     display: flex;
+    @include mobile {
+        height: 65vh;
+        padding: .5rem;
+    }
         .colLeft {
             width: 30%;
             height: 100%;
@@ -52,19 +76,36 @@
                 color: #4896efa3;
                 margin-top: 10px;
             }
+            @include mobile {
+                height: 40%;
+                width: 100%;
+                img{
+                    width: 20%;
+                }
+            }
         }
         .colRight{
             width: 70%;
             padding: 2rem;
+            @include mobile {
+               width: 100%;
+               padding: 1rem;
+            }
             p{
                 color: #f1f1f1;
                 line-height: 40PX;
+                @include mobile {
+                    font-size: .8rem;
+                }
             }
         }
         span {position: absolute;
         bottom: 0;
          right: 5%;
       
+        }
+        @include mobile {
+            flex-direction: column;
         }
      }
 }

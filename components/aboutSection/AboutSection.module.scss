@@ -13,7 +13,7 @@
       @content
   }}
 .aboutSectionContainer{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     box-sizing: border-box;
     background-image: url("/aboutbg3.svg");
@@ -24,9 +24,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 3rem;
+    padding: 5rem;
     @include mobile {
-        padding: 1rem;
+        padding: .2rem;
     }
     .aboutCol {
         width: 43%;
@@ -55,6 +55,7 @@
         }
         .title{
             color: #f1f1f1;
+            font-size: 2rem;
         }
         .subtitle{
             color: #f1f1f1;
@@ -81,6 +82,10 @@
             &:hover {
                 background: #7209B7
             }
+        }
+        @include tablet {
+            width: 100%;
+            height: 50%;
         }
     }
 }

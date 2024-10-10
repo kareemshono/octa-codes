@@ -9,8 +9,8 @@ const Contact = () => {
      <div className={styles.colLeft}>
         <div className={styles.header}>
             <h1>Contact</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa animi maxime accusantium id, quasi, aliquid, 
-                ratione corrupti ipsa repellendus iste delectus explicabo dolorem omnis quae neque soluta cum. Error, doloribus!</p>
+            <p>At <span>Octa Codes</span>, we’re always here to assist with your IT and web development needs. Whether you have a question
+                 about our services, want to discuss a new project, or simply need technical support, our team is ready to help.</p>
         </div>
         <div className={styles.body}>
             <div className={styles.row}>
@@ -20,6 +20,10 @@ const Contact = () => {
             <div className={styles.row}>
                 <h3>Email</h3>
                 <p>info@octa.codes</p>
+            </div>
+            <div className={styles.row}>
+                <h3>Address</h3>
+                <p>Iraq - Erbil, Dream City - V:603</p>
             </div>
             <div className={styles.social}>
                 <span>

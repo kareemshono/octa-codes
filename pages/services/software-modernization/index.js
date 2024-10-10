@@ -43,8 +43,13 @@ const SoftwareModernization = () => {
         const isActive = id === activeCard; // Check if this card is active
         return (
             <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
+                <div className={styles.header}>
                 <Image src={imgUrl} width={200} height={100} alt={title} />
+                </div>
+                <div className={styles.text}>
                 <p className={styles.title}>{title}</p>
+                </div>
+                
                 {isActive && 
           <div className={`${styles.description}`}>
             <p>{description}</p>
@@ -61,7 +66,7 @@ const SoftwareModernization = () => {
         <main className={`${styles.main} ${inter.className}`}>
         <section className={styles.bannerSec}>
             <div className={styles.colLeft}>
-                <h1 className={styles.title}>Unleash the potential of your software, inspire your customers</h1>
+                <h1 className={styles.title}>Unleash the <span>potential</span>  of your software, inspire your customers</h1>
                 
             <p>To stay ahead of the competition, companies have to react quickly to market trends and customer wishes. Many business managers come to us because their software is throwing a spanner in the works:
                 </p>
@@ -87,7 +92,7 @@ const SoftwareModernization = () => {
                 <button>Submit Request</button>
             </div>
             <div className={styles.colRight}>
-                <Image src={"/service.svg"} width={400} height={400} alt="consulting vector" />
+                <Image src={"/service.svg"} width={400} height={300} alt="consulting vector" />
             </div>
         </section>
 

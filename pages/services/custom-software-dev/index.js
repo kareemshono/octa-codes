@@ -43,8 +43,13 @@ const CustomSoftware = () => {
         const isActive = id === activeCard; // Check if this card is active
         return (
             <div onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} alt={`${title}`} />
+                <div className={styles.header}>
+                <Image src={imgUrl} width={100} height={100} alt={`${title}`} />
+                </div>
+                <div className={styles.text}>
                 <p className={styles.title}>{title}</p>
+                </div>
+                
                 {isActive && 
           <div className={`${styles.description}`}>
             <p>{description}</p>
@@ -61,7 +66,7 @@ const CustomSoftware = () => {
          <main className={`${styles.main} ${inter.className}`}>
          <section className={styles.bannerSec}>
             <div className={styles.colLeft}>
-                <h1 className={styles.title}>Customized software solutions from a personal team of experts</h1>
+                <h1 className={styles.title}>Customized <span>software</span>  solutions from a personal team of experts</h1>
                 
             <p>A dedicated team of octa developers will delve deep into your business logic and your goals. This is how we at Octa develop 
                 software solutions that advance your company and are successful in the long term. </p>
@@ -71,7 +76,7 @@ const CustomSoftware = () => {
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/customSoft.svg"} priority width={500} height={400} alt="vector" />
+                <Image src={"/customSoft.svg"} priority width={500} height={300} alt="vector" />
             </div>
         </section>
         <section className={styles.header}>
@@ -130,7 +135,7 @@ const CustomSoftware = () => {
                 <h2>Custom Software Solutions</h2>
             </div>
         </section>
-        <section className={styles.text}>
+        <section className={styles.textCenter}>
             <h1>When is customized software worth it?</h1>
             <ul>
                 <li><p>You have complex requirements that standard software does not cover.</p></li>

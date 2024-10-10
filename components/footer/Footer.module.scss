@@ -22,7 +22,7 @@
     z-index: +9;
    padding: 4rem 4rem 0rem 4rem;
   @include mobile {
-    padding: 1rem;
+    padding: 2rem;
   }
     .logoContainer {
         
@@ -82,6 +82,7 @@
         width: 20%;
         @include mobile {
             width: 100%;
+            margin: 0;
         }
         ul {
             list-style: none;
@@ -130,4 +131,10 @@
 }
 .footerLogo {
     opacity: .3;
+    @include mobile {
+    margin: 0 auto;
+    height: 100%;
+    width: 50%;
+    padding: 2rem;
+    }
 }

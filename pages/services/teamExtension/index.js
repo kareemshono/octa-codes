@@ -51,8 +51,19 @@ const TeamExtension = () => {
             <div 
             ref={(el) => (cardRefs.current[id] = el)}
             onClick={() => setActiveCard(isActive ? null : id)}  className={styles.card}>
-                <Image src={imgUrl} width={200} height={100} alt={title}/>
+                <div className={styles.header}>
+                <Image src={imgUrl} width={100} height={100} alt={title}/>
+                </div>
+                
+                <div className={styles.text}>
                 <p className={styles.title}>{title}</p>
+                <button>Learn More
+                    <span>
+                        <Image src={"/more.svg"} height={20} width={20} alt={"vector"} />
+                    </span>
+                </button>
+                </div>
+                
                 {isActive && 
           <div className={`${styles.description}`}>
             <p>{description}</p>
@@ -102,7 +113,7 @@ const TeamExtension = () => {
     <main className={`${styles.main} ${inter.className}`}>
         <section className={styles.bannerSec}>
             <div className={styles.colLeft}>
-                <h1 className={styles.title}>Team Expansion or Outsourcing:</h1>
+                <h1 className={styles.title}>Team Expansion or <span>Outsourcing</span>:</h1>
                 <h2 className={styles.subtitle}>Choose a service model & get started</h2>
             <p>With all our service models, the responsibility for your success lies with our team </p>
             <p>With Octa as your business contractual partner, you benefit from the advantages of
@@ -111,7 +122,7 @@ const TeamExtension = () => {
             
             </div>
             <div className={styles.colRight}>
-                <Image src={"/teamexbanner.svg"} width={600} height={400} alt="vector" />
+                <Image src={"/teamexbanner.svg"} width={600} height={300} alt="vector" />
             </div>
         </section>
         <section className={styles.modelsSec}>
@@ -141,15 +152,18 @@ const TeamExtension = () => {
                         <li>
                             <p>The Octa team works in your development and communication environment (language: English).</p>
                         </li>
+                        
                         <li>
                      <p>Your contact person supports the collaboration and ensures its success (communication: English).</p>   
                         </li>
                         <li>
                             <p>We train new team members and build up know-how for your business case.</p>
                         </li>
+                        <br></br>
                         <li>
                             <p>Octa Satisfaction Guarantee</p>
                         </li>
+                        <br></br>
                         <li>
                             <p>Contract according to the law</p>
                         </li>
@@ -182,7 +196,7 @@ const TeamExtension = () => {
                             <p>We are responsible for quality assurance and software testing.</p>
                         </li>
                         <li>
-                            <p>Project responsibility in Octa, Your contact person accompanies the project and ensures its success (communication:  English).</p>
+                            <p> Your contact person accompanies the project </p>
                         </li>
                         <li>
                             <p>Support, maintenance and further development after project completion</p>
@@ -197,7 +211,8 @@ const TeamExtension = () => {
             </div>
         </section>
         <section className={styles.teamEx}>
-            <div className={styles.header}>
+            <div className={styles.body}>
+            <div className={styles.colLeft}>
                 <h2 className={styles.title}>Get started together and achieve results quickly</h2>
                 <p>With our "team extension" service model, you accelerate your software projects - <br />
                  while retaining full control over the development process.
@@ -205,6 +220,11 @@ const TeamExtension = () => {
                   We rely on our tried-and-tested onboarding process to
                 ensure that you get off to a successful start together and achieve results quickly:</p>
             </div>
+            <div className={styles.colRight}>
+                <Image src="/teamExtension.webp" width={600} height={450}  alt="team"/>
+            </div>
+            </div>
+           
             <div className={styles.steps}>
                 <div className={styles.step}>
                     <Image src={"/one.svg"} width={100} height={100} alt="number"/>
@@ -240,8 +260,9 @@ const TeamExtension = () => {
             </div>
         </section>
         <section className={styles.ourModel}>
-        <div className={styles.header}>
-                <h2 className={styles.title}>You save your budget. We ensure your quality standards.</h2>
+   
+            <div className={styles.colLeft}>
+            <h2 className={styles.title}>You save your budget. We ensure your quality standards.</h2>
                 <p>Do you want to expand your development capacities flexibly and cost-effectively with external IT experts - 
                     but you have had bad experiences with freelancers or foreign service providers?</p>
                     <p>With Octa you can reliably strengthen your team and rely on global quality standards.</p>
@@ -281,11 +302,15 @@ const TeamExtension = () => {
                             </li>
                         </ul>
             </div>
+            <div className={styles.colRight}>
+                <Image src="/teamEx2.webp" width={550} height={450}  alt="meeting" />
+            </div>
+            
         </section>
         <section className={styles.outsourcing}>
         <div className={styles.header}>
                 <h1>Outsourcing with Octa</h1>
-                <p>This service model is suitable for you if your team does not have the capacity or know-how to take over <br />
+                <p>This service model is suitable for you if your team does not have the capacity or know-how to take over 
                      the technical project management and coordinate the development team.</p>
             </div>
             <div ref={gridRef} className={styles.grid}>

@@ -1,22 +1,37 @@
+@mixin mobile {
+    @media screen and (max-width:576px) {
+        @content
+    }
+}
+@mixin tablet {
+    @media screen and (min-width: 600px) and (max-width:1100px) {
+        @content
+    }}
 @mixin bigScreen {
     @media screen and (min-width: 1600px) and (max-width:2400px) {
       @content
   }}
 .main {
     width: 100%;
+    background-color: #fff;
     .bannerSec{
         display: flex;
         height: 80vh;
         width: 100%;
-        
-        align-items: flex-end;
+        padding-top: 1rem;
+        align-items:center;
         justify-content: center;
         background: url("/dd-2.png");
        
         background-repeat: no-repeat;
         background-size: cover;
-        @include bigScreen {
+        @include bigScreen{
             height: 60vh;
+        }
+        @include mobile {
+            height: 100vh;
+            flex-direction: column;
+    
         }
         .colLeft {
             width: 50%;
@@ -25,19 +40,45 @@
             box-sizing: border-box;
             padding: 3rem;
             h1{
-                margin-bottom: 30px;
-                
+                margin-bottom: 20px;
+                font-size: 2rem;
+                span {
+                    color: #4361EE;
+                }
+                @include mobile {
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                margin-top: 1rem;
+                }
             }
-            
+           
             p{
-                margin-bottom: 30px;
+                margin-bottom: 20px;
                 opacity: .8;
+                font-size: .9rem;
+                line-height: 20px;
+            }
+            @include mobile {
+                width: 100%;
+              padding: 1.5rem;
+                p:last-child{
+                    margin-bottom: 5px;
+                }
             }
         }
         .colRight {
             width: 50%;
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
+            @include mobile {
+                width: 100%;
+                
+                padding: 1rem;
+                img{
+                    width: 50%;
+                    height: 90%;
+                }
+            }
             
         }
     }
@@ -55,6 +96,14 @@
             color: #140042;
             margin-bottom: 20px;
             font-size: 2rem;
+            @include mobile {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+        @include mobile {
+            width: 100%;
+
         }
     }
 }
@@ -64,11 +113,16 @@
     justify-content: center;
     align-items: center;
     background: #140042;;
-    
+    @include mobile {
+        flex-direction: column;
+    }
     .colLeft{
         width: 40%;
         box-sizing: border-box;
         padding: 2rem;
+        @include mobile {
+            width: 100%;
+        }
         h2{
             margin-bottom: 2rem;
             font-size: 2rem;
@@ -99,6 +153,13 @@
         box-sizing: border-box;
         padding: 2rem;
         text-align: center;
+        @include mobile {
+            width: 100%;
+            
+            img{
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -110,9 +171,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         .textContainer{
             width: 50%;
             padding:  5rem 2rem;
+            @include mobile {
+                width: 100%;
+
+            }
             h1{
                 color: #140042;
                 margin-bottom: 20px;
@@ -128,24 +194,93 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    @include mobile {
+        flex-direction: column;
+    }
     .card {
         width: 25vw;
         height: 40vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+       
         align-items: center;
-        background: rgba(20, 0, 66, 0.8);
-        box-shadow: 0px 2px 5px  rgba(37, 37, 37, 0.37);
+        background: rgba(20, 0, 66, 0.9);
+        background-image: url("/card.svg");
+        background-size: cover;
+        background-position: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         box-sizing: border-box;
         cursor: pointer;
         position: relative;
         padding: 1rem;
+        border-radius: 10px;
+        .header {
+            height: 40%;
+            padding: 0;
+            width: 100%;
+            padding: 30px;
+        }
+        .text{
+            height: 60%;
+            width: 100%;
+            padding: 0px 10px;
+            text-align: start;
+          
+
+            p{
+                color: #f1f1f1;
+                margin-top: 3rem;
+                font-weight: 500;
+                font-size: 1.1rem;
+                @include mobile {
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+            }
+            button{
+                margin-top: 2rem;
+                  background: #4361EE;
+                  border-radius: 999px;
+                  display: flex;
+                  
+                  align-items: center;
+                  box-shadow: #191919 0 10px 20px 0px;
+                  box-sizing: border-box;
+                  color: #FFFFFF;
+                  cursor: pointer;
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 24px;
+                  opacity: 1;
+                  outline: 0 solid transparent;
+                  padding: 5px 20px;
+                  user-select: none;
+                  -webkit-user-select: none;
+                  touch-action: manipulation;
+                  width: fit-content;
+                  word-break: break-word;
+                  border: 0;
+                  gap: 3px;
+                  transition:.3s all ease-in-out;
+                  span{
+                    margin-top: 5px;
+                  }
+                  &:hover {
+                    background-color: #284be9;
+                  }
+                
+            }
+        }
         p{
             color: #f1f1f1;
             margin-top: 3rem;
+            font-weight: 500;
+            @include mobile {
+                font-size: 1.2rem;
+                text-align: center;
+            }
         }
         .description{
             display: block!important;
@@ -154,10 +289,14 @@
             box-shadow: 0px 2px 5px  rgba(37, 37, 37, 0.37);
             backdrop-filter: blur(5px);
             inset: 0;
+            border-radius: 10px;
             padding: 1rem;
             transition: .5s all ease-in-out;
             p{
                 line-height: 30px;
+                @include mobile {
+                    font-size: .9rem;
+                }
             }
         }
         .toggledDesc{
@@ -172,6 +311,12 @@
                 line-height: 30px;
             }
 
+              }
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            width: 70%;
         }
     }
 }

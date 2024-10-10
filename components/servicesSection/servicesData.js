@@ -1,7 +1,7 @@
 export const servicesData = [
     {id:0,
      imgUrl:"/webdev.svg",
-     title:"custom software development",
+     title:"software development",
      url:"/services/custom-software-dev",
      description:"Our dedicated Octa developers dive into your business logic, crafting long-term software solutions that drive success to your businesses.",
         subDescription:"We put together a dedicated team of developers. They only work on your project. You benefit from our expertise and a quick project start."
